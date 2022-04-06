@@ -31,27 +31,37 @@ main {
 	margin-right: 45px;
 	background-color: #eaeaea;
 }
-
 .card__left {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-
 .btn__plus-minus {
+	align-items: center;
 }
 .minus {
+	border: none;
+	background: #fff;
+	cursor: pointer;
+	margin-right: 23.4px;
 }
 .number {
+	font-family: "Montserrat";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 17px;
+	line-height: 21px;
+	color: #000000;
 }
 .plus {
+	border: none;
+	background: #fff;
+	cursor: pointer;
+	margin-left: 23.4px;
 }
-
 .card__rigth {
 	display: flex;
-}
-.headphone__title {
 }
 .headphone__name-price {
 	display: flex;
@@ -60,7 +70,6 @@ main {
 	flex-direction: column;
 	margin-right: 200px;
 }
-
 .headphone__name {
 	font-family: "Montserrat";
 	font-style: normal;
@@ -83,9 +92,9 @@ main {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-end;
-	padding: 18px 28px 21px 0px;
 }
 .headphone__delete {
+	cursor: pointer;
 }
 .headphone__buy {
 	font-family: "Montserrat";
@@ -96,15 +105,15 @@ main {
 	text-align: right;
 	color: #1c1c27;
 }
-
 .headphones {
 	margin-bottom: 21px;
 }
-/* .grid-container {
+.grid-container {
 	display: grid;
 	gap: 31px;
-	grid-template-columns: repeat(3, 1fr);
-} */
+	grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
 h3 {
 	font-family: "Montserrat";
 	font-style: normal;
@@ -120,8 +129,10 @@ h3 {
 	max-width: 633px;
 	height: 218px;
 	background: #ffffff;
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
 	border-radius: 30px;
+	justify-content: space-between;
+	padding: 18px 28px 21px 19px;
 }
 .card__top {
 	flex-grow: 1;
@@ -136,23 +147,9 @@ h3 {
 .headphone__title {
 	margin: 0px 22px 27px;
 }
-
 .headphone-stars-buy {
 	display: flex;
 	justify-content: space-between;
-}
-.headphone__rate {
-	display: flex;
-	align-items: center;
-	font-family: "Montserrat";
-	font-style: normal;
-	font-weight: 600;
-	font-size: 17px;
-	line-height: 21px;
-	color: #838383;
-}
-.headphone__rate img {
-	margin-right: 10px;
 }
 .headphone__buy {
 	font-family: "Montserrat";
@@ -163,9 +160,7 @@ h3 {
 	color: #000000;
 	border: none;
 	background-color: white;
-	cursor: pointer;
 }
-
 footer {
 	flex-grow: 1 1 auto;
 }
