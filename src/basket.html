@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/normalize.css">
-  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/basket.css">
   <title>Document</title>
 </head>
 
@@ -15,7 +15,7 @@
     <div class="container">
       <div class="header">
         <div class="header__logo">
-          <img src="/img/logo.svg" alt="Логотип" />
+          <a href="../index.html"><img src="/img/logo.svg" alt="Логотип" /></a>
         </div>
         <div class="header__actions">
           <button class="heart"><img src="/img/heart.svg" alt="" /></button>
@@ -27,27 +27,34 @@
   <main>
     <section class="wireless-headphones">
       <div class="container">
-        <h3>Беспроводные наушники</h3>
+        <h3>Корзина</h3>
         <div class="grid-container">
           <div class="headphone__card">
-            <div class="card__top">
-              <img src="/img/headphones-3.svg" alt="" />
+            
+            <div class="card__left">
+              <img src="/img/headphones-1.svg" alt="" width="146.53" height="136"/>
+              <div class="btn__plus-minus">
+                <button class="minus"><img src="../img/minus.svg" alt=""></button>
+                <p class="number">1</p>
+                <button class="plus"><img src="../img/plus.svg" alt=""></button>
+              </div>
             </div>
-            <div class="card__bottom">
-              <div class="headphone__title">
+
+            <div class="card__rigth">
+              
                 <div class="headphone__name-price">
                   <h3 class="headphone__name">Apple EarPods</h3>
                   <span class="headphone__price">2927 ₽</span>
                 </div>
-                <div class="headphone-stars-buy">
-                  <div class="headphone__rate">
-                    <img src="/img/star.svg" alt="Оценка товара" />
-                    4.7
+                <div class="headphone-delete-buy">
+                  <div class="headphone__delete">
+                    <img src="../img/delete-icon.svg" alt="">
                   </div>
-                  <button class="headphone__buy">Купить</button>
+                  <span class="headphone__buy">2927 P</span>
                 </div>
-              </div>
+              
             </div>
+
           </div>
         </div>
       </div>
