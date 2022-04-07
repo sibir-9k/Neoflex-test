@@ -1,36 +1,36 @@
 const headphones = [
   {
-    img: "../img/headphones-1.svg",
+    img: "./img/headphones-1.svg",
     title: "Apple BYZ S852I",
     price: 2927,
     rate: 4.7,
   },
   {
-    img: "../img/headphones-2.svg",
+    img: "./img/headphones-2.svg",
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
   },
   {
-    img: "../img/headphones-3.svg",
+    img: "./img/headphones-3.svg",
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
   },
   {
-    img: "../img/headphones-1.svg",
+    img: "./img/headphones-1.svg",
     title: "Apple BYZ S852I",
     price: 2927,
     rate: 4.7,
   },
   {
-    img: "../img/headphones-2.svg",
+    img: "./img/headphones-2.svg",
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
   },
   {
-    img: "../img/headphones-3.svg",
+    img: "./img/headphones-3.svg",
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
@@ -40,34 +40,23 @@ const headphones = [
 
 const headPhones = [ 
   {
-    img: "../img/airpods.svg",
+    img: "./img/airpods.svg",
     title: "Apple AirPods",
     price: 9527,
     rate: 4.7,
   },
   {
-    img: "../img/gerlax.svg",
+    img: "./img/gerlax.svg",
     title: "GERLAX GH-04",
     price: 6527,
     rate: 4.7,
   },
   {
-    img: "../img/borofone.svg",
+    img: "./img/borofone.svg",
     title: "BOROFONE BO4",
     price: 7527,
     rate: 4.7,
   },
-]
-
-const sections = [
-  {
-    title: 'Беспроводные наушники',
-    items: headphones
-  },
-  {
-    title: 'Наушники',
-    items: headPhones
-  }
 ]
 
 
