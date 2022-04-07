@@ -22,8 +22,8 @@ main {
 	justify-content: space-between;
 	padding: 15px 0px;
 }
-.header__actions{
-  padding-right: 8px;
+.header__actions {
+	padding-right: 8px;
 }
 .header__actions .heart {
 	cursor: pointer;
@@ -34,11 +34,11 @@ main {
 .headphones {
 	margin-bottom: 21px;
 }
-.grid-container {
+/* .grid-container {
 	display: grid;
 	gap: 31px;
 	grid-template-columns: repeat(3, 1fr);
-}
+} */
 h3 {
 	font-family: "Montserrat";
 	font-style: normal;
@@ -48,7 +48,16 @@ h3 {
 	color: #838383;
 	margin-bottom: 20px;
 }
-.headphone__card {
+.cards-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column: 3 span;
+	gap: 31px;
+}
+.card-block {
+	list-style: none;
+}
+.card {
 	display: flex;
 	box-sizing: border-box;
 	max-width: 350px;
@@ -121,15 +130,15 @@ footer {
 	flex-grow: 1 1 auto;
 }
 .footer {
-  padding: 29px 27.5px 32px;
-  display: flex;
-  justify-content: space-between;
-  background: #ffffff;
-  box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
-  border-radius: 30px 30px 0px 0px;
+	padding: 29px 27.5px 32px;
+	display: flex;
+	justify-content: space-between;
+	background: #ffffff;
+	box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+	border-radius: 30px 30px 0px 0px;
 }
-.footer-menu{
-  margin-top: 5px;
+.footer-menu {
+	margin-top: 5px;
 }
 .menu-list {
 	list-style: none;
@@ -185,7 +194,7 @@ footer {
 .footer__socials {
 	display: flex;
 	align-items: center;
-  height: 30px;
+	height: 30px;
 }
 .footer__socials a {
 	margin-right: 18px;
