@@ -25,6 +25,20 @@ main {
 .header__actions {
 	padding-right: 8px;
 }
+.header__actions a{
+  position: relative;
+}
+.bucket-number{
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #000;
+  background-color: #FFA542;
+  border-radius: 100%;
+  padding: 2px;
+  min-width: 17.4px;
+  min-height: 17.4px;
+}
 .header__actions .heart {
 	cursor: pointer;
 	border: none;
