@@ -1,35 +1,41 @@
 const headphones = [
   {
+    id: 1,
     img: "./img/headphones-1.svg",
     title: "Apple BYZ S852I",
     price: 2927,
     rate: 4.7,
   },
   {
+    id: 2,
     img: "./img/headphones-2.svg",
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
   },
   {
+    id: 3,
     img: "./img/headphones-3.svg",
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
   },
   {
+    id: 4,
     img: "./img/headphones-1.svg",
     title: "Apple BYZ S852I",
     price: 2927,
     rate: 4.7,
   },
   {
+    id: 5,
     img: "./img/headphones-2.svg",
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
   },
   {
+    id: 6,
     img: "./img/headphones-3.svg",
     title: "Apple EarPods",
     price: 2327,
@@ -40,18 +46,21 @@ const headphones = [
 
 const headPhones = [ 
   {
+    id: 7,
     img: "./img/airpods.svg",
     title: "Apple AirPods",
     price: 9527,
     rate: 4.7,
   },
   {
+    id: 8,
     img: "./img/gerlax.svg",
     title: "GERLAX GH-04",
     price: 6527,
     rate: 4.7,
   },
   {
+    id: 9,
     img: "./img/borofone.svg",
     title: "BOROFONE BO4",
     price: 7527,
@@ -59,12 +68,11 @@ const headPhones = [
   },
 ]
 
-
 // Функция которая будет принимать на вход три строки: имя тега (tagName), 
 // имя класса (className) и текстовое содержимое (text) элемента. 
 // Внутри неё будем создавать элемент с классом и текстом, а затем возвращать его наружу.
-var makeElement = function (tagName, className, text) {
-  var element = document.createElement(tagName);
+  function makeElement(tagName, className, text) {
+  const element = document.createElement(tagName);
   element.classList.add(className);
   if (text) {
     element.textContent = text;
@@ -73,45 +81,47 @@ var makeElement = function (tagName, className, text) {
 }
 
 // Функция для создания карточки
-var createCard = function (headphone) {
-  var listItem = makeElement('li', 'card-block');
+ const createCard = function (headphone) {
+  const listItem = makeElement('li', 'card-block');
   listItem.classList.add('card')
 
-  var cardTop = makeElement('div', 'card__top')
+  const cardTop = makeElement('div', 'card__top')
   listItem.appendChild(cardTop)
  
-  var img = makeElement('img', 'card__img')
+  const img = makeElement('img', 'card__img')
   img.src = headphone.img;
   img.alt = headphone.title;
   cardTop.appendChild(img)
 
-  var cardBottom = makeElement('div', 'card__bottom')
+  const cardBottom = makeElement('div', 'card__bottom')
   listItem.appendChild(cardBottom)
 
-  var headphoneTitle = makeElement('div', 'headphone__title')
+  const headphoneTitle = makeElement('div', 'headphone__title')
   cardBottom.appendChild(headphoneTitle);
 
-  var headphoneNamePrice = makeElement('div', 'headphone__name-price')
+  const headphoneNamePrice = makeElement('div', 'headphone__name-price')
   headphoneTitle.appendChild(headphoneNamePrice);
 
-  var title = makeElement('h3', 'headphone__name', headphone.title)
+  const title = makeElement('h3', 'headphone__name', headphone.title)
   headphoneNamePrice.appendChild(title)
 
-  var price = makeElement('span', 'headphone__price', headphone.price + '  ₽')
+  const price = makeElement('span', 'headphone__price', headphone.price + '  ₽')
   headphoneNamePrice.appendChild(price)
 
-  var headphoneStarsBuy = makeElement('div', 'headphone-stars-buy')
+  const headphoneStarsBuy = makeElement('div', 'headphone-stars-buy')
   headphoneTitle.appendChild(headphoneStarsBuy);
 
-  var headphoneRate = makeElement('div', 'headphone__rate', headphone.rate)
+  const headphoneRate = makeElement('div', 'headphone__rate', headphone.rate)
   headphoneStarsBuy.appendChild(headphoneRate);
 
-  var starImg = makeElement('img')
+  const starImg = makeElement('img')
   starImg.src = './img/star.svg'
   starImg.alt = 'Рейтинг'
   headphoneRate.appendChild(starImg)
 
-  var headphoneBuy = makeElement('button', 'headphone__buy', 'Купить')
+  const headphoneBuy = makeElement('button', 'headphone__buy', 'Купить')
+  headphoneBuy.dataset.id = headphone.id
+  headphoneBuy.addEventListener("click", () => addToBucket(headphone));
   headphoneStarsBuy.appendChild(headphoneBuy);
 
   return listItem;
@@ -121,13 +131,46 @@ var createCard = function (headphone) {
 function createSection (sectionId,items){
   const cardList = document.querySelector(sectionId)
   if(cardList){
-    for (var i = 0; i < items.length; i++) {
-      var cardItem = createCard(items[i]);
+    for (let i = 0; i < items.length; i++) {
+      const cardItem = createCard(items[i]);
       cardList.appendChild(cardItem);  
     }
   }
 }
 createSection('#cards-1', headphones)
 createSection('#cards-2', headPhones)
+
+
+const cardBuy = document.querySelector(".headphone__buy");
+const numBucket = document.querySelector("#bucket-number");
+
+window.onload = function () {
+	const cardBuy = document.querySelectorAll(".headphone__buy");
+	console.log(cardBuy);
+	for (let i = 0; i < cardBuy.length; i++) {
+		cardBuy[i].addEventListener("click", function () {
+			const card = event.target.closest(".card-block");
+			numBucket.innerText = ++numBucket.innerText;
+		});
+	}
+};
+
+const bucket = [];
+
+function addToBucket(item) {
+  if(bucket.length){
+    const alreadyAddedItem = bucket.find(addedItem => addedItem.item.id === item.id)
+    if(alreadyAddedItem){
+      alreadyAddedItem.count++;
+    } else {
+      bucket.push({ item: item, count: 1});
+    }
+  } else {
+    bucket.push({item: item, count: 1});
+  }
+
+  sessionStorage.setItem('bucket', JSON.stringify(bucket))
+}
+
 
 
